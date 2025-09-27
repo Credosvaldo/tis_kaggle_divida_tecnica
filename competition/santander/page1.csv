@@ -1,0 +1,101 @@
+ref,title,author,lastRunTime,totalVotes
+gpreda/santander-eda-and-prediction,Santander EDA and Prediction,Gabriel Preda,2019-04-03 16:47:19.020000,2952
+jiweiliu/lgb-2-leaves-augment,LGB 2 leaves + augment,Jiwei Liu,2019-03-15 17:46:58.693000,1145
+yag320/list-of-fake-samples-and-public-private-lb-split,List of Fake Samples and Public/Private LB split,YaG320,2019-03-23 00:27:32.583000,889
+cdeotte/200-magical-models-santander-0-920,200 Magical Models - Santander - [0.920],Chris Deotte,2019-04-11 21:20:42.710000,745
+mjbahmani/santander-ml-explainability,Santander ML Explainability,MJ Bahmani,2019-03-10 16:50:47.970000,715
+cdeotte/modified-naive-bayes-santander-0-899,Modified Naive Bayes - Santander - [0.899],Chris Deotte,2019-04-12 23:54:44.433000,646
+jesucristo/santander-magic-lgb-0-901,Santander Magic LGB 0.901,Nanashi,2019-03-23 09:03:55,628
+roydatascience/eda-pca-simple-lgbm-on-kfold-technique,"EDA, PCA + Simple LGBM on KFold Technique",Ashish Gupta,2019-03-20 18:23:40.230000,518
+vinhnguyen/gpu-acceleration-for-lightgbm,GPU acceleration for LightGBM,Vinh Nguyen,2019-03-08 00:18:49.507000,424
+fl2ooo/nn-wo-pseudo-1-fold-seed,"NN wo pseudo, 1 fold seed",fl2o,2019-04-11 17:01:02.530000,389
+felipemello/why-your-model-is-overfitting-not-making-progress,Why your model is overfitting/not making progress,Felipe Mello,2019-04-06 03:02:55.780000,376
+brandenkmurray/nothing-works,Nothing Works,Branden Murray,2019-03-07 22:13:06.823000,368
+allunia/santander-customer-transaction-eda,Santander Customer Transaction - EDA,Laura Fink,2019-04-03 12:27:00.820000,362
+jiweiliu/fast-pdf-calculation-with-correlation-matrix,Fast PDF calculation with correlation matrix,Jiwei Liu,2019-03-29 05:34:05.870000,351
+blackblitz/gaussian-naive-bayes,Gaussian Naive Bayes,William Zhu (Wai Yan),2019-03-02 04:40:00.630000,350
+nawidsayed/lightgbm-and-cnn-3rd-place-solution,LightGBM and CNN 3rd place solution,Nawid Sayed,2019-04-11 11:13:02.527000,348
+artgor/santander-eda-fe-fs-and-models,"Santander EDA, FE, FS and models",Andrew Lukyanenko,2019-03-31 17:40:28.933000,344
+mathormad/knowledge-distillation-with-nn-rankgauss,Knowledge Distillation with NN + RankGauss,Duc Nguyen,2019-03-11 03:11:08.997000,336
+chocozzz/santander-lightgbm-baseline-lb-0-899,Santander LightGBM Baseline LB 0.899,choco,2019-02-15 00:10:39.537000,335
+hjd810/keras-lgbm-aug-feature-eng-sampling-prediction,Keras+LGBM  Aug+Feature Eng+Sampling Prediction,Hussein Jundi,2019-04-08 09:10:11.587000,332
+fayzur/lgb-bayesian-parameters-finding-rank-average,LGB + Bayesian parameters finding + Rank average,Fayzur,2019-02-24 23:53:14.020000,300
+felipemello/boosting-creativity-towards-feature-engineering,Boosting creativity towards feature engineering,Felipe Mello,2019-03-22 00:57:28.290000,276
+somang1418/tuning-hyperparameters-under-10-minutes-lgbm,Tuning Hyperparameters Under 10 Minutes (LGBM),Somang (So) Han,2019-03-02 05:54:36.043000,252
+darbin/hierarchical-clustering-approach,Hierarchical clustering approach,Ilya Khristoforov,2020-01-21 09:50:19.807000,249
+jesucristo/30-lines-starter-solution-fast,30 lines  Starter Solution #FAST,Nanashi,2019-03-16 01:07:33.917000,244
+titericz/giba-single-model-public-0-9245-private-0-9234,Giba Single Model Public 0.9245/ Private 0.9234,Giba,2019-04-11 03:23:55.700000,239
+josh24990/santander-customer-transaction-prediction,Santander Customer Transaction Prediction,Joshua Reed,2019-03-29 22:12:33.953000,234
+gpreda/santander-fast-compact-solution,Santander Fast  Compact Solution,Gabriel Preda,2019-03-20 22:47:54.213000,234
+tanreinama/lightgbm-minimize-leaves-with-feature-enginering,LightGBM Minimize Leaves with Feature Enginering,Tanrei(nama),2019-03-01 11:25:04.270000,230
+jesucristo/top-1-in-40-lines,top 1% in 40 lines,Nanashi,2019-04-15 19:25:59.013000,227
+roydatascience/eda-pca-lgbm-santander-transactions,"EDA, PCA + LGBM : Santander Transactions",Ashish Gupta,2019-04-10 19:01:53.940000,217
+gpreda/santander-improved-starter-solution,Santander Improved Starter Solution,Gabriel Preda,2019-03-08 12:28:08.610000,213
+omgrodas/lightgbm-with-data-augmentation,Lightgbm with data augmentation,Ole Morten Grodås,2019-04-01 04:53:52.610000,206
+indranilbhattacharya/santander-xgb-lgb-starter,Santander XGB+LGB starteR,Indranil Bhattacharya,2019-03-28 03:55:10.903000,204
+brandenkmurray/randomly-shuffled-data-also-works,Randomly Shuffled Data Also Works,Branden Murray,2019-03-12 02:36:05.297000,198
+super13579/pytorch-nn-cyclelr-k-fold-0-897-lightgbm-0-899,Pytorch NN CycleLR+K fold(0.897) & LightGBM(0.899),FunkyBoy,2019-03-06 01:44:39.163000,196
+jesucristo/90-lines-solution-0-901-fast,90 lines solution 0.901 #Fast,Nanashi,2019-03-21 00:03:14.897000,192
+graf10a/logistic-regression-with-new-features-feather,Logistic regression with new features + feather,Alexey Pronin,2019-03-30 22:33:48.253000,186
+blackblitz/gaussian-mixture-naive-bayes,Gaussian Mixture Naive Bayes,William Zhu (Wai Yan),2019-03-31 07:32:32.817000,186
+fayzur/lightgbm-customer-transaction-prediction,LightGBM - Customer Transaction Prediction,Fayzur,2019-02-24 23:30:53.163000,160
+dott1718/922-in-3-minutes,922 in 3 minutes,dott,2019-04-11 09:04:04.287000,157
+niteshx2/beginner-explained-lgb-2-leaves-augment,[Beginner Explained]LGB 2 leaves + augment,Nitesh Chaudhry,2019-04-09 06:02:23.690000,153
+youhanlee/yh-eda-i-want-to-see-all,YH EDA - I want to see all!!,Youhan Lee,2019-02-15 02:31:39.250000,146
+sandeepkumar121995/magic-parameters,Magic Parameters !!,Sandeep Kumar,2019-03-20 06:00:05.037000,140
+yuzusan/santander-draft-v3-eda-lgb-nn,Santander Draft v3 - EDA + LGB + NN,mademoiselle sans nom,2019-03-11 15:49:00.250000,139
+amrmahmoud123/1-guide-to-ensembling-methods,1-Guide to Ensembling methods ,Amr Mahmoud,2019-04-25 11:02:58.847000,134
+fatihozturk/competition-points-calculation,Competition Points Calculation ,Fatih Öztürk,2019-04-17 11:28:24.847000,129
+tezdhar/getting-started-santander,Getting started Santander,Mohsin hasan,2019-03-11 03:04:29.233000,127
+felipemello/step-by-step-guide-to-the-magic-lb-0-922,Step-by-step guide to the magic - [LB 0.922],Felipe Mello,2019-04-16 13:04:50.457000,126
+darbin/principal-component-analysis-approach,Principal component analysis approach,Ilya Khristoforov,2020-01-21 09:47:00.827000,123
+yassinealouini/mystery-behind-var-68,Mystery behind var_68?,Yassine Alouini,2019-03-17 21:59:09.153000,123
+qitian51212/simple-magic-var-0-922,simple magic VAR 0.922,Tian Qi (Luke),2019-04-12 17:15:37.117000,121
+wakamezake/starter-code-catboost-baseline,Starter Code: CatBoost Baseline,wakame,2019-02-15 23:59:18.090000,121
+faressayah/nlp-with-spacy-nltk-gensim,"NLP with spaCy, NLTK, & GENSIM",Fares Sayah,2023-02-16 22:26:55.267000,119
+fl2ooo/create-data,create_data,fl2o,2019-03-27 19:40:02.363000,119
+roydatascience/santander-transaction-stacking-1-0,Santander Transaction Stacking 1.0,Ashish Gupta,2019-03-19 20:17:00.883000,115
+frtgnn/santander-eda-prediction-augmentation,Santander EDA + Prediction + Augmentation,Firat Gonen,2020-04-12 18:10:38.713000,114
+mhviraf/what-a-decision-tree-cannot-see,What a decision tree cannot see?,Massoud Hosseinali,2019-04-09 06:43:10.430000,113
+ruby33421/quick-start-0-9-lgb-with-new-features, Quick start @ 0.9 - LGB with New Features,Red_rbc,2019-03-11 18:14:15.617000,110
+sibmike/are-vars-mixed-up-time-intervals,Are vars mixed up time intervals?,sibmike,2019-03-27 03:20:34.617000,109
+brandenkmurray/weird-data-structure-random-data,Weird Data Structure - Random Data,Branden Murray,2019-02-25 20:08:03.370000,107
+vinhnguyen/accelerating-xgboost-with-gpu,Accelerating XGboost with GPU,Vinh Nguyen,2019-03-07 22:47:16.957000,102
+titericz/single-model-using-only-train-counts-information,Single Model Using Only Train Counts Information,Giba,2019-04-12 00:51:52.510000,98
+b5strbal/lightgbm-naive-bayes-santander-0-900,LightGBM Naive Bayes - Santander - [0.900],Balazs Strenner,2019-03-25 17:04:05.100000,98
+dromosys/gpu-accelerated-lightgbm-full,GPU-accelerated LightGBM full,Dromosys,2019-03-05 02:11:44.847000,98
+jiweiliu/fast-inplace-shuffle-for-augmentation,Fast inplace shuffle for augmentation,Jiwei Liu,2019-03-29 12:28:12.150000,97
+fahadmehfoooz/santader-customer-transaction-classification,Santader Customer Transaction Classification,Fahad Mehfooz,2022-02-23 09:38:20.430000,95
+quanghm/fastai-1-0-tabular-learner-with-ensemble,FastAI 1.0 Tabular Learner with Ensemble,QuangHoàng,2019-03-30 13:07:32.770000,95
+marcospcsj/kernel-cod-valid-cruzada-lgbm,kernel_cod_valid_cruzada_lgbm,Marcos Paulo,2019-03-12 04:07:48.627000,91
+triplex/more-unique-values-in-train-set-than-test-set,More unique values in train set than test set ?,Spoiler Alert,2019-03-22 15:55:26.403000,89
+fdewes/lgbm-training-augmentation,LGBM + Training augmentation ,Florian Dewes,2019-03-24 13:24:41.870000,88
+ymatioun/santander-model-one-feature-at-a-time,Santander: model one feature at a time,Youri Matiounine,2019-03-14 12:56:36.417000,86
+arezoodahesh/santander-customer-transaction-prediction-lgbm,Santander Customer Transaction Prediction | LGBM,Arezoo Dahesh,2022-08-23 13:14:14.817000,84
+wuliaokaola/santander-lb-0-869-no-need-to-train,"Santander LB 0.869, No need to train",Johnny Lee,2019-03-22 13:14:38.660000,84
+jakubczakon/top-public-kernels-comparison,Top public kernels comparison,Jakub Czakon,2019-03-19 15:21:41.413000,84
+mingaliev/santander-lgb-new-features-rank-mean-10-folds,Santander LGB + new features + rank mean 10 folds,Dinar Mingaliev,2019-03-09 01:40:26.170000,84
+sibmike/subtracting-normality, Subtracting normality,sibmike,2019-03-28 18:42:41.857000,83
+tunguz/adversarial-santander,Adversarial Santander,Bojan Tunguz,2020-07-24 12:16:17.370000,83
+nickycan/compress-70-of-dataset,Compress 70% of dataset,🐳鲲(China),2019-02-17 14:59:30.120000,80
+subhamsharma96/santander-augment-to-the-rescue,Santander (-: Augment to the rescue,Subham Sharma,2019-04-04 10:28:01.223000,78
+mytymohan/sct-prediction-eda-smote-lgbm,SCT Prediction - EDA + SMOTE + LGBM,Mohanraj Ramalingam,2019-02-28 18:26:11.993000,78
+zxspectrum/catboost-gpu,CatBoost GPU,Vadzim Yermakou,2019-03-18 13:35:31.950000,76
+kamalchhirang/simple-lightgbm-with-good-parameters,Simple LightGBM with Good Parameters,Kamal Chhirang,2019-03-12 14:12:26.173000,76
+tunguz/santander-with-h2o-automl,Santander with H2O AutoML,Bojan Tunguz,2020-06-10 00:23:32.050000,75
+fuhang/weighted-kernel-naive-bayes-with-lasso-elimination,Weighted Kernel Naive Bayes with Lasso Elimination,Horizon@fuhang,2019-04-08 10:41:07.703000,74
+gunesevitan/santander-customer-transaction-eda-fe-lgb,Santander Customer Transaction - EDA / FE / LGB,Gunes Evitan,2020-01-20 17:06:02.377000,74
+benjibb/denoised-autoencoder-for-feature-engineering,Denoised Autoencoder for feature engineering,Ben Fung,2019-03-26 17:20:27.817000,73
+ranjoranjan/kernel83f071aec1,kernel83f071aec1,shishir ranjan,2019-03-15 01:49:23.270000,72
+silverstone1903/xgboost-baseline,XGBoost Baseline ,silverstone,2019-03-03 11:27:57.190000,70
+scirpus/weird-data-structure,Weird Data Structure,Scirpus,2019-02-20 13:00:52.323000,70
+vishesh17/keras-nn-with-scaling-and-regularization,Keras NN with scaling and regularization,VisheshShrivastav,2019-02-19 22:48:00.550000,70
+ashishpatel26/feature-selection-pca-catboost,Feature Selection +  PCA + Catboost,NowYSM,2019-02-20 08:30:46.710000,66
+roydatascience/blender-of-0-901-solutions,Blender of 0.901 solutions,Ashish Gupta,2019-04-08 13:57:01.993000,65
+sandeepkumar121995/santander-customer-transaction-prediction,Santander Customer Transaction Prediction,Sandeep Kumar,2019-04-08 11:19:28.083000,63
+mhviraf/santander-compact-solution-14-lines-will-do,Santander Compact++ Solution (14 lines will do),Massoud Hosseinali,2019-03-15 00:36:47,63
+konradb/lgb-parameter-tuning,LGB + parameter tuning,Konrad Banachewicz,2019-02-18 15:29:32.377000,63
+sungdoo/sctp-working-lgb,SCTP-working(LGB),sungdoo choi,2019-02-17 17:48:27.340000,63
+naraque/red-neuronal-keras,Red Neuronal Keras,Nicolas Araque,2019-05-13 14:15:12.133000,62
+kwonyoung234/too-many-names-of-params-in-lgbm,TOO MANY NAMES OF PARAMS IN LGBM!!,Jerry Kwon,2019-03-03 10:43:23.927000,62
+psystat/simple-eda-logistic-regression-speedglm-with-r,"Simple EDA, Logistic Regression(speedglm) with R",psystat,2019-04-08 05:16:25.247000,62

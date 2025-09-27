@@ -1,0 +1,26 @@
+Domínio Tabular:
+1. house-prices-advanced-regression-techniques
+2. santander-customer-transaction-prediction
+3. porto-seguros-safe-driver-prediction
+
+• Domínio de Visão Computacional (CV):
+4. cassava-leaf-disease-classification
+5. petfinder-pawpularity-score
+
+• Domínio de Processamento de Linguagem Natural (NLP):
+6. commonlitreadabilityprizehelp
+7. quora-insincere-questions-classification
+
+kaggle kernels pull {ref} -p ./notbooks/[{name}]/
+mkdir -p {name} && kaggle kernels list --competition {name} --sort-by voteCount --page-size 100 -p 1 --csv > {name}/page-{page_number}.csv
+
+mkdir -p competition/house && kaggle kernels list --competition house-prices-advanced-regression-techniques --sort-by voteCount --page-size 100 -p 1 --csv > competition/house/page1.csv
+mkdir -p competition/santander && kaggle kernels list --competition santander-customer-transaction-prediction --sort-by voteCount --page-size 100 -p 1 --csv > competition/santander/page1.csv
+mkdir -p competition/porto && kaggle kernels list --competition porto-seguros-safe-driver-prediction --sort-by voteCount --page-size 100 -p 1 --csv > competition/porto/page1.csv
+mkdir -p competition/cassava && kaggle kernels list --competition cassava-leaf-disease-classification --sort-by voteCount --page-size 100 -p 1 --csv > competition/cassava/page1.csv
+mkdir -p competition/petfinder && kaggle kernels list --competition petfinder-pawpularity-score --sort-by voteCount --page-size 100 -p 1 --csv > competition/petfinder/page1.csv
+mkdir -p competition/commonlit && kaggle kernels list --competition commonlitreadabilityprize --sort-by voteCount --page-size 100 -p 1 --csv > competition/commonlit/page1.csv
+mkdir -p competition/quora && kaggle kernels list --competition quora-insincere-questions-classification --sort-by voteCount --page-size 100 -p 1 --csv > competition/quora/page1.csv
+
+
+

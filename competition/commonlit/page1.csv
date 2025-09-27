@@ -1,0 +1,101 @@
+ref,title,author,lastRunTime,totalVotes
+rhtsingh/utilizing-transformer-representations-efficiently,Utilizing Transformer Representations Efficiently,torch,2022-10-16 19:14:31.733000,1228
+andretugan/commonlit-two-models,commonlit-two-models,Andrey Tuganov,2021-06-30 20:58:26.367000,882
+ruchi798/commonlit-readability-prize-eda-baseline,CommonLit Readability Prize: EDA + Baseline,Ruchi Bhatia,2021-05-11 19:12:19.327000,763
+rhtsingh/commonlit-readability-prize-roberta-torch-itpt,CommonLit Readability Prize - RoBERTa Torch|ITPT,torch,2021-05-21 19:31:44.137000,724
+rhtsingh/commonlit-readability-prize-roberta-torch-infer-3,CommonLit Readability Prize-RoBERTa Torch|Infer 3,torch,2021-06-01 20:05:26.150000,625
+rhtsingh/commonlit-readability-prize-roberta-torch-fit,CommonLit Readability Prize - RoBERTa Torch|FIT,torch,2021-07-01 08:03:58.863000,622
+andretugan/pre-trained-roberta-solution-in-pytorch,Pre-trained Roberta solution in PyTorch,Andrey Tuganov,2021-06-30 01:06:31.250000,578
+rhtsingh/commonlit-readability-prize-roberta-torch-infer,CommonLit Readability Prize - RoBERTa Torch|Infer ,torch,2021-05-28 20:38:08.930000,507
+maunish/clrp-roberta-svm,CLRP: RoBerta  + SVM,Maunish dave,2021-06-30 07:48:21.750000,501
+mdfahimreshm/bert-in-depth-understanding,BERT - In Depth Understanding,Md Fahim,2021-05-13 08:25:29.320000,485
+rhtsingh/on-stability-of-few-sample-transformer-fine-tuning,On Stability of Few-Sample Transformer Fine-Tuning,torch,2021-07-01 07:56:58.343000,459
+rajat95gupta/clrp-ensemble-3x-inference,clrp_ensemble_3x_inference,Rajat Gupta,2021-07-25 14:10:39.910000,455
+maunish/clrp-pytorch-roberta-pretrain,CLRP: Pytorch Roberta Pretrain,Maunish dave,2021-06-29 07:18:43.567000,436
+rhtsingh/speeding-up-transformer-w-optimization-strategies,Speeding up Transformer w/ Optimization Strategies,torch,2021-07-01 07:51:05.390000,408
+pichenguang/commonlit-two-models-with-new-model,commonlit-two-models（with new model),pichenguang,2021-07-25 12:20:01.697000,385
+jcesquiveld/roberta-large-5-fold-single-model-meanpooling,RoBERTa-large 5-fold single model (MeanPooling),jcesquivel,2021-07-27 17:51:05.550000,374
+dimitreoliveira/commonlit-readability-eda-roberta-tf-baseline,CommonLit Readability - EDA & RoBERTa TF baseline,DimitreOliveira,2021-05-13 02:01:15.623000,374
+lhagiimn/clrp-ensemble-public-notebooks,CLRP: Ensemble Public Notebooks,lhagiimn,2021-06-09 10:28:09.733000,346
+chumajin/pytorch-bert-beginner-s-room-version,Pytorch BERT beginner's room【日本語version】,chumajin,2021-05-17 20:43:21.333000,329
+mobassir/commonlit-readability-tensorflow-torch-ensemble,Commonlit_Readability-tensorflow+torch ensemble,Mobassir,2021-06-21 06:01:40.043000,292
+rhtsingh/two-roberta-s-are-better-than-one-0-469,Two RoBERTa's are Better than One [0.469],torch,2021-05-29 04:43:23.743000,288
+maunish/clrp-pytorch-roberta-finetune,CLRP:  Pytorch Roberta Finetune,Maunish dave,2021-06-29 10:23:31.347000,282
+rhtsingh/commonlit-readability-prize-roberta-torch-infer-2,CommonLit Readability Prize-RoBERTa Torch|Infer 2,torch,2021-05-26 22:00:20.653000,276
+chumajin/pytorch-bert-beginner-s-room,Pytorch BERT beginner's room,chumajin,2021-06-05 13:16:19.760000,268
+jeongyoonlee/tf-keras-bert-baseline-training-inference,TF/Keras BERT Baseline (Training/Inference),jeong,2021-05-09 04:22:03.667000,263
+rhtsingh/swa-apex-amp-interpreting-transformers-in-torch,"SWA, Apex AMP & Interpreting Transformers in Torch",torch,2021-07-01 05:53:54.807000,252
+chamecall/clrp-inference,CLRP-Inference,algernone,2021-08-01 13:30:06.870000,241
+heyytanay/training-kfolds-pytorch-bert-large-w-o-oom,[TRAINING & KFOLDS] PyTorch BERT-Large w/o OOM🎯,Tanay Mehta,2021-06-24 02:51:33.730000,234
+abhishek/step-1-create-folds,Step 1: Create Folds,Abhishek Thakur,2021-05-05 09:33:04.063000,228
+rhtsingh/guide-to-huggingface-schedulers-differential-lrs,Guide to HuggingFace Schedulers & Differential LRs,torch,2021-07-01 07:58:32.777000,221
+datafan07/eda-simple-bayesian-ridge-with-sentence-embeddings,EDA+Simple Bayesian Ridge with Sentence Embeddings,Ertuğrul Demir,2021-05-11 03:22:09.363000,219
+andretugan/lightweight-roberta-solution-in-pytorch,Lightweight Roberta solution in PyTorch,Andrey Tuganov,2021-06-29 17:24:28.197000,209
+abhishek/fork-of-fork-of-yum-yum-yum-93f968,Fork of Fork of yum yum yum 93f968,Abhishek Thakur,2021-05-08 07:34:38.767000,207
+abhishek/yum-yum-yum,yum yum yum,Abhishek Thakur,2021-05-06 10:24:59.373000,204
+hannes82/commonlit-readability-roberta-inference,CommonLit readability: RoBerta inference,Hannes Öhler,2021-05-04 01:54:47.897000,201
+chamecall/clrp-finetune-single-roberta-base,CLRP-Finetune (single RoBerta-base),algernone,2021-07-24 06:59:03.520000,200
+andradaolteanu/i-commonlit-explore-xgbrf-repeatedfold-model,📖 I.CommonLit: Explore + XGBRF&RepeatedFold Model,Andrada,2021-06-07 15:46:10.510000,190
+ravishah1/readability-feature-engineering-non-nn-baseline,Readability Feature Engineering + Non NN Baseline,Ravi Shah,2021-05-13 23:12:34.847000,187
+leighplt/transformers-cv-train-inference-pytorch,transformers [cv-train inference] | Pytorch ,Leigh,2021-05-31 13:06:03.920000,166
+maunish/clrp-pytorch-roberta-inference,CLRP: Pytorch Roberta Inference,Maunish dave,2021-07-04 05:24:10.020000,161
+rajat95gupta/clrp-mean-pooling-inference,clrp_mean_pooling_inference,Rajat Gupta,2021-07-25 08:54:10.357000,159
+hannes82/commonlit-readability-roberta-simple-baseline,CommonLit Readability: RoBerta simple baseline  ,Hannes Öhler,2021-05-21 14:17:43.027000,153
+donmarch14/commonlit-detailed-guide-to-learn-nlp,CommonLit: Detailed Guide to Learn NLP,Don Mani,2021-06-09 07:04:46.683000,150
+sumantindurkhya/bert-for-regression,Bert for regression,Sumant Indurkhya,2021-06-20 05:59:22.517000,148
+ragnar123/commonlit-readability-roberta-tf,CommonLit Readability Roberta TF ,Martin Kovacevic Buvinic,2021-05-10 20:21:21.547000,147
+jcesquiveld/best-transformer-representations,best transformer representations,jcesquivel,2021-07-07 18:25:11.173000,139
+ragnar123/commonlit-readability-roberta-tf-inference,CommonLit Readability Roberta TF Inference,Martin Kovacevic Buvinic,2021-05-10 21:47:08.773000,138
+asvskartheek/bert-tpus-jax-huggingface,BERT + TPUs + JAX + HuggingFace,Kartheek Akella,2021-06-29 02:10:05.377000,133
+andreshg/commonlit-a-complete-analysis,[CommonLit] 📘 A Complete Analysis 📒,AndresHG,2021-05-24 09:40:59.767000,132
+maunish/clrp-pytorch-roberta-finetune-tpu,CLRP:  Pytorch Roberta Finetune [TPU],Maunish dave,2021-06-30 16:45:15.543000,129
+shahules/guide-pytorch-data-samplers-sequence-bucketing,Guide: Pytorch data Samplers & Sequence bucketing,Shahules,2021-07-02 12:02:50.063000,127
+debarshichanda/explore-t5,Explore T5🧐,Debarshi Chanda,2021-07-26 05:00:59.870000,116
+lars123/neural-tangent-kernel-2,Neural tangent kernel 2,noidea,2021-05-17 11:32:46.057000,111
+andradaolteanu/ii-commonlit-bert-vs-roberta-w-b-testing,📖 II.CommonLit: BERT vs RoBERTa + W&B testing,Andrada,2021-06-25 14:29:15.157000,108
+shaz13/code-how-bradley-terry-model-works,Code: How Bradley Terry Model Works,Shahebaz Mohammad,2021-05-25 15:38:10.903000,106
+gunesevitan/commonlit-readability-prize-eda,CommonLit Readability Prize - EDA,Gunes Evitan,2021-05-20 10:30:48.943000,104
+rajat95gupta/mean-pooling-4-seeds,mean_pooling_4_seeds,Rajat Gupta,2021-07-24 06:48:12.480000,102
+subinium/how-to-visualize-text-dataset,How to Visualize Text Dataset? 📜,Subin An,2021-11-12 09:57:51.790000,99
+jiny333/creating-whl-files-to-install-external-libraries,Creating whl files to install external libraries,SDSTony,2021-05-06 00:35:00.703000,99
+the0electronic0guy/commonlit-roberta-top-12,Commonlit Roberta (top 12%),Ajay Tibrewal,2021-07-16 18:08:40.443000,98
+shreyasajal/pytorch-lightning-bert-tpu-weights-biases-logs,PyTorch Lightning⚡BERT(TPU)+Weights&Biases logs📑,Shreya Sajal,2021-05-29 15:58:00.907000,98
+debarshichanda/pytorch-commonlit-readability-bert-baseline,[Pytorch] CommonLit Readability BERT Baseline 📚,Debarshi Chanda,2021-07-09 20:42:10.933000,98
+shreyasajal/prompt-tuning-bert-commonlit-readability,Prompt Tuning BERT🎯:CommonLit Readability,Shreya Sajal,2021-05-22 17:16:06.270000,93
+chumajin/bert-v-s-roberta-english,BERT v.s. RoBERTa (English & 日本語),chumajin,2021-07-02 11:59:00.893000,91
+ligtfeather/squeezebert-madgrad-grad-accumulation-w-b,📖 SqueezeBert + MadGrad + Grad Accumulation + W&B,Tanishq Gautam,2021-06-30 11:39:26.933000,90
+getitdone/beginners-friendly-notebook,Beginners Friendly Notebook,Ashish Puri,2021-05-31 20:00:09.617000,90
+konradb/linear-baseline-with-cv,Linear baseline - with cv,Konrad Banachewicz,2021-05-03 22:19:01.260000,89
+alincijov/nlp-starter-logsoftmax-nlloss-cross-entropy,NLP Starter 📋 LogSoftmax NLLoss Cross Entropy,Alin Cijov,2021-08-01 02:11:22.507000,89
+chamecall/clrp-finetune-roberta-large,CLRP-Finetune(roberta-large),algernone,2021-07-28 13:49:47.100000,85
+krishna1997gopal/understand-bert-in-depth-theory-implementation,Understand BERT in depth(Theory+Implementation),krishan gopal,2021-06-07 05:48:36.150000,83
+shreyasajal/pytorch-bert-baseline-lr-schedulers-guide,[PYTORCH]🤗BERT BASELINE+LR SCHEDULERS GUIDE 📑,Shreya Sajal,2021-05-12 17:29:47.677000,82
+javigallego/deberta-from-the-ground-up-2-approaches,DeBERTa (from the ground up) + 2 Approaches,Francisco Javier Gallego,2022-10-05 19:04:26.503000,79
+sourabhy/commonlit-roberta-ensemble-multichannel-cnn,CommonLit Roberta +Ensemble Multichannel CNN,SOURABH  Y,2021-05-24 03:28:39.860000,78
+heyytanay/submission-pytorch-bert-kfolds-inference,[SUBMISSION] PyTorch BERT Kfolds Inference 🎯,Tanay Mehta,2021-05-25 07:30:05.700000,78
+takoihiraokazu/final-sub1,final_sub1,Takoi,2021-08-03 21:06:17.817000,77
+ligala/readability,Readability,Ligala,2021-07-26 15:40:55.253000,75
+mpwolke/dataprep-clean-literature,Dataprep Clean Literature,Marília Prata,2021-06-04 15:51:46.257000,73
+chamecall/clrp-pretrain,CLRP-Pretrain,algernone,2021-07-20 08:35:03.457000,71
+tensorchoko/commonlit-readability-roberta,⬛CommonLit- Readability roberta  ,tensor choko,2021-07-17 23:15:59.407000,70
+chumajin/how-to-initialize-the-code-correctly-english,How to initialize the code correctly (English&日本語),chumajin,2021-07-03 14:31:41.193000,69
+yhirakawa/textstat-how-to-evaluate-readability,[Textstat] How to evaluate readability?,shokupan,2021-06-19 12:36:38.267000,68
+chumajin/inference-for-pytorch-bert-beginner-s-room,Inference for Pytorch BERT beginner's room,chumajin,2021-05-11 07:54:38.477000,68
+thedrcat/commonlit-what-are-we-reading-about,CommonLit: What are we reading about?  ,Darek Kłeczek,2021-05-27 05:26:36.627000,67
+heyytanay/commonlit-eda-understanding-the-competition,CommonLit EDA + Understanding the Competition 🚀,Tanay Mehta,2021-05-08 11:48:57.760000,65
+mdhamani/clrp-roberta-pre-training-using-deepspeed,CLRP : Roberta Pre-training using DeepSpeed ⚡⚡,Manav Dhamani,2021-07-10 08:27:42.250000,62
+bharadwajvedula/clr-lb-0-475-lazy-way-to-get-good-score,[CLR][LB-0.475] Lazy way to get good score,Bharadwaj Vedula,2021-06-26 00:23:36.560000,62
+atsushiiwasaki/commonlit-bert-stratified-k-fold-baseline-train,CommonLit: BERT Stratified K Fold Baseline [train],Atsushi Iwasaki,2021-06-07 00:16:59.887000,62
+ankur310794/crp-mix-6-models-inference,crp-mix-6-models-inference,Ankur Singh,2021-05-08 17:07:53.350000,62
+chamecall/train-val-split,train-val-split,algernone,2021-07-22 15:05:55.373000,61
+duttadebadri/eda-basline-modeling-commonlit-passages,EDA & Basline Modeling - CommonLit Passages,Debadri Dutta,2021-06-01 19:10:37.063000,58
+sourabhy/commonlit-roberta-cnn,CommonLit Roberta + CNN,SOURABH  Y,2021-05-19 13:49:12.817000,58
+dev1ceqqq/ensemblethreemethods,EnsembleThreeMethods,dev1ceqqq,2021-06-21 10:54:50.387000,57
+mathislucka/commonlitreadability-r3,CommonLitReadability-r3,Mathis Lucka,2021-08-02 15:31:46.383000,57
+tomwarrens/commonlit-readability-prize-eda,CommonLit Readability Prize EDA 🔎📖,Tommaso Guerrini,2022-07-15 14:21:45.853000,57
+manishkc06/text-pre-processing-data-wrangling,Text Pre-processing & Data Wrangling,Manish KC,2021-05-05 04:13:41.357000,57
+takoihiraokazu/lb-ensemble-add-electra-base-bert-base2-t5-diba2,[lb]_ensemble_add_electra_base_bert_base2_t5_diba2,Takoi,2021-08-02 15:33:43.700000,55
+tarandeep97/performance-comparison-of-regression-models,Performance comparison of regression models,Tarandeep Singh,2021-06-21 06:55:10.160000,55
+ejmejm/commonlit-bert-submission-video-tutorial,CommonLit BERT Submission + Video Tutorial,Ejmejm,2021-06-06 01:06:16.527000,55
+teeyee314/readability-url-scrape,Readability URL Scrape,Tim Yee,2021-05-31 21:03:24.470000,55
+houssemayed/lstm-models-for-regression-on-text-data,LSTM models for regression on text data,Houssem Ayed,2021-05-11 13:02:29.990000,54

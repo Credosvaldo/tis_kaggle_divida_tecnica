@@ -1,0 +1,619 @@
+---
+title: "Simple EDA and Logistic Regression with R"
+author: "stat17_hb"
+output: 
+  html_document: 
+    numbersection: yes
+    toc: yes
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=F)
+```
+
+# Load Libraries
+
+```{r Load Libraries}
+library(tidyverse) # metapackage with lots of helpful functions
+library(data.table)
+library(ggthemes)
+library(speedglm)
+library(MASS)
+```
+
+# Load Data
+
+```{r Load Data}
+train <- fread("../input/train.csv")
+test <- fread("../input/test.csv")
+```
+
+---
+
+# EDA
+
+```{r EDA1}
+glimpse(train)
+glimpse(test)
+```
+
++ In train set, there are 200,000 observations and 200 features(var_0~var_199) with target variable.
+
++ In test set, there are 200,000 observations and 200 features without target variable.
+
+```{r EDA2}
+train$ID_code %>% unique %>% length
+test$ID_code %>% unique %>% length
+```
+
++ ID_code variable has unique values for each dataset.
+
+```{r EDA3}
+colSums(is.na(train))
+colSums(is.na(test))
+```
+
++ There are no missing values in both train, test set.
+
+## Target
+
+```{r EDA4}
+table(train$target)
+target_df <- data.frame(table(train$target))
+colnames(target_df) <- c("target", "freq")
+ggplot(data=target_df, aes(x=target, y=freq, fill=target)) +
+  geom_bar(position = 'dodge', stat='identity', alpha=0.5) +
+  scale_fill_manual("legend", values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic()
+```
+
+## Features
+
+### Density plots for train data
+
+```{r density_train1, fig.width=10, fig.height=10}
+feature_groups <- 3:22
+col_names <- colnames(train)[c(2,feature_groups)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train2, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+20)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train3, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+40)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train4, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+60)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train5, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+80)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train6, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+100)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train7, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+120)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train8, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+140)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train9, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+160)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_train10, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+180)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+### Compare density plots train and test
+
+```{r}
+train$key <- "train"
+test$key <- "test"
+full <- rbind(train[,-(1:2)], test[,-1])
+full$key <- factor(full$key)
+```
+
+```{r density_full1, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full2, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+20]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full3, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+40]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full4, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+60]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full5, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+80]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full6, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+100]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full7, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+120]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full8, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+140]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full9, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+160]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r density_full10, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+180]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(x=value)) +
+  geom_density(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+
+### boxplots for train data
+
+```{r boxplot_train1, fig.width=10, fig.height=10}
+feature_groups <- 3:22
+col_names <- colnames(train)[c(2,feature_groups)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train2, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+20)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train3, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+40)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train4, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+60)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train5, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+80)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train6, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+100)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train7, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+120)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train8, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+140)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train9, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+160)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_train10, fig.width=10, fig.height=10}
+col_names <- colnames(train)[c(2,feature_groups+180)]
+temp <- gather(train[,col_names, with=F], key="features", value="value", -target)
+temp$target <- factor(temp$target)
+temp$features <- factor(temp$features, levels=col_names[-1], labels=col_names[-1])
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=target, color=target), alpha=0.3) +
+  scale_color_manual(values = c("1" = "dodgerblue", "0"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+### Compare boxplots train and test
+
+```{r boxplot_full1, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full2, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+20]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full3, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+40]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full4, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+60]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full5, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+80]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full6, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+100]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full7, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+120]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full8, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+140]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full9, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+160]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+```{r boxplot_full10, fig.width=10, fig.height=10}
+feature_groups <- 1:20
+col_names <- colnames(full)[feature_groups+180]
+temp <- gather(full[,c("key",col_names), with=F], key="features", value="value", -key)
+temp$features <- factor(temp$features, levels=col_names, labels=col_names)
+ggplot(data=temp, aes(y=value)) +
+  geom_boxplot(aes(fill=key, color=key), alpha=0.3) +
+  scale_color_manual(values = c("train" = "dodgerblue", "test"="firebrick1")) +
+  theme_classic() +
+  facet_wrap(~ features, ncol = 4, scales = "free")
+```
+
+
+```{r}
+train <- train %>% dplyr::select(-key)
+test <- test %>% dplyr::select(-key)
+```
+
+### Correlations
+
+```{r correlations}
+cormat <- cor(train[,-c(1,2)])
+summary(cormat[upper.tri(cormat)])
+```
+
++ Correlations between features nearly zero.
+
+---
+
+# Modeling
+
+```{r scaling}
+X_train <- scale(train[,-(1:2)]) %>% data.frame
+X_test <- scale(test[,-1]) %>% data.frame
+target <- train$target
+```
+
+## Logistic Regression
+
+### glm vs speedglm
+
+```{r glm_speedglm}
+start.time <- Sys.time()
+fit.logit <- glm(target~., data=X_train, family=binomial)
+end.time <- Sys.time()
+end.time - start.time
+
+start.time <- Sys.time()
+fit.logit <- speedglm(target~., data=X_train, family=binomial())
+end.time <- Sys.time()
+end.time - start.time
+```
+
++ `speedglm` function is faster than `glm` function about 7 times
+
+```{r logit submission}
+pred.logit <- predict(fit.logit, newdata=X_test, type="response")
+submission <- read.csv("../input/sample_submission.csv")
+submission$target <- pred.logit
+write.csv(submission, file="submission_logit.csv", row.names=F)
+```
