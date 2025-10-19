@@ -57,3 +57,7 @@ coverage.xml
 
 # Windows
 Thumbs.db
+
+
+/competition_obsolete
+/competition
