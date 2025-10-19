@@ -1,0 +1,29 @@
+[
+    {
+        "domain": "",
+        "competitionUrl": "",
+        "category": "",
+        "reward": 0,
+        "teamCount": 0,
+        "kernels": [
+            {
+                "ref": "",
+                "title": "",
+                "author": "",
+                "lastRunTime": "",
+                "totalVotes": 0,
+                "satd": {
+                    "dataDependency": 0,
+                    "codeDependency": 0,
+                    "awareness": 0,
+                    "modularity": 0,
+                    "configurableOptions": 0,
+                    "scalability": 0,
+                    "readability": 0,
+                    "performance": 0,
+                    "duplicateCodeElimination": 0
+                }
+            }
+        ]
+    }
+]
